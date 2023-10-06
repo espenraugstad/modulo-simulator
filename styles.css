@@ -2,12 +2,24 @@ body{
     display: flex;
     flex-direction: column;
     width: 100vw;
-    height: 100vh;
+    min-height: 100vh;
     margin: 0;
     padding: 0;
     align-items: center;
+    justify-content: space-between;
     text-align: center;
     font-family: Arial, Helvetica, sans-serif;
+}
+main{
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    min-height: 100%;
+    margin: 0;
+    padding: 0;
+    align-items: center;
+    justify-content: space-between;
+    text-align: center;
 }
 
 p{
@@ -57,4 +69,9 @@ button{
     font-weight: 900;
     border: 1px solid black;
     padding: 1rem;
+}
+
+footer{
+    text-align: center;
+    margin: 2rem 0; 
 }
