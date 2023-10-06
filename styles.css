@@ -25,12 +25,27 @@ button{
 
 #boxes{
     width: 80vw;
+    display: inline-block;
+    text-align: left;
 }
 
 .box{
     display: inline-block;
     width: 15px;
     height: 15px;
-    margin: 0 0.5rem;
+    margin: 0.25rem;
     background-color: red;
+}
+
+.hiddenBox{
+    opacity: 0;
+    background-color: black;
+    transition: opacity 3s;
+}
+
+#result{
+    font-size: 30px;
+    font-weight: 900;
+    border: 1px solid black;
+    padding: 1rem;
 }
