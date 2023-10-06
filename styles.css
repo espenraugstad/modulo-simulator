@@ -25,6 +25,7 @@ button{
 
 #boxes{
     width: 80vw;
+    max-width: 800px;
     display: inline-block;
     text-align: left;
 }
