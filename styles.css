@@ -17,6 +17,14 @@ p{
 
 button{
     margin: 2rem;
+    background-color: #00B333;
+    color: black;
+    border: none;
+    border-radius: .2rem;
+    width: 5rem;
+    line-height: 2rem;
+    font-weight: 600;
+    cursor: pointer;
 }
 
 #bigCount{
