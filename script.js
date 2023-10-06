@@ -12,29 +12,37 @@ numerator.addEventListener("blur", drawBoxes);
 
 async function runSimulation() {
   console.log("Running");
-  
-  const allBoxes = document.querySelectorAll(".box");
-  await sleep(2000);
-
-  // Hide the first boxes
-  const totalBoxes = parseInt(numerator.value);
-  const blocks = parseInt(denominator.value);
-  let currentCount = 0;
-  while ((currentCount + 1) * blocks <= totalBoxes) {
-    for (
-      let i = currentCount * blocks;
-      i < currentCount * blocks + blocks;
-      i++
-    ) {
-      allBoxes[i].classList.add("hiddenBox");
-    }
-    currentCount++;
-    console.log(currentCount * blocks);
-    bigCount.innerHTML = currentCount;
+  let inputOk = checkInput();
+  if (inputOk) {
+    const allBoxes = document.querySelectorAll(".box");
     await sleep(2000);
-  }
 
-  showResult();
+    // Hide the first boxes
+    const totalBoxes = parseInt(numerator.value);
+    const blocks = parseInt(denominator.value);
+    let currentCount = 0;
+    while ((currentCount + 1) * blocks <= totalBoxes) {
+      for (
+        let i = currentCount * blocks;
+        i < currentCount * blocks + blocks;
+        i++
+      ) {
+        allBoxes[i].classList.add("hiddenBox");
+      }
+      currentCount++;
+      console.log(currentCount * blocks);
+      bigCount.innerHTML = currentCount;
+      await sleep(2000);
+    }
+
+    showResult();
+  } else {
+    alert("You need to enter numbers in both input fields.");
+  }
+}
+
+function checkInput() {
+  return numerator.value !== "" && denominator.value !== "";
 }
 
 function drawBoxes() {
