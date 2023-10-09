@@ -22,9 +22,13 @@ main{
     text-align: center;
 }
 
+input{
+    margin: 0.5rem 0;
+}
+
 p{
     text-align: center;
-    margin: 1rem;
+    margin: .5rem;
 }
 
 button{
@@ -55,13 +59,12 @@ button{
     width: 15px;
     height: 15px;
     margin: 0.25rem;
-    background-color: red;
+    border: 1px solid black;
 }
 
 .hiddenBox{
-    opacity: 0;
     background-color: black;
-    transition: opacity 3s;
+    transition: 1s;
 }
 
 #result{

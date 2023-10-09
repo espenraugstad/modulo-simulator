@@ -1,10 +1,17 @@
 const numerator = document.getElementById("numerator");
 const denominator = document.getElementById("denominator");
 const run = document.getElementById("run");
+const remaining = document.getElementById('remaining');
+const filled = document.getElementById('filled');
 const boxes = document.getElementById("boxes");
-const count = document.getElementById("count");
-const bigCount = document.getElementById("bigCount");
+//const count = document.getElementById("count");
+//const bigCount = document.getElementById("bigCount");
 const result = document.getElementById("result");
+
+window.onload = ()=>{
+  numerator.value = "";
+  denominator.value = "";
+}
 
 run.addEventListener("click", runSimulation);
 
@@ -31,7 +38,9 @@ async function runSimulation() {
       }
       currentCount++;
       console.log(currentCount * blocks);
-      bigCount.innerHTML = currentCount;
+      //bigCount.innerHTML = currentCount;
+      remaining.innerHTML = totalBoxes - blocks * currentCount;
+      filled.innerHTML = blocks * currentCount;
       await sleep(2000);
     }
 
@@ -48,8 +57,10 @@ function checkInput() {
 function drawBoxes() {
   // Clear existing boxes
   boxes.innerHTML = "";
-  bigCount.innerHTML = "0";
+  //bigCount.innerHTML = "0";
   result.innerHTML = "";
+  remaining.innerHTML = numerator.value;
+  filled.innerHTML = "0";
   // Draw up the required number of boxes
   for (let i = 0; i < parseInt(numerator.value); i++) {
     let box = document.createElement("span");
